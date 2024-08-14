@@ -30,16 +30,16 @@ def main():
             data = line.split()
             try:
                 file_size += int(data[-1])
-            except:
+            except BaseException:
                 pass
             try:
                 if data[-2] in status_codes:
                     status_codes[data[-2]] += 1
-            except:
+            except BaseException:
                 pass
-            if count == 10:
+            if count % 10 == 0:
                 print_stats(file_size, status_codes)
-                count = 0
+        print_stats(file_size, status_codes)
     except KeyboardInterrupt:
         print_stats(file_size, status_codes)
         raise
