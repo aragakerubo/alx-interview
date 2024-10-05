@@ -40,4 +40,3 @@ def isWinner(x, nums):
     if score[0] < score[1]:
         return players[1]
     return None
-
